@@ -8,7 +8,7 @@ import color from '../../helpers/color'
 import { ColorWrap, EditableInput, Swatch } from '../common'
 
 export const Twitter = ({ onChange, onSwatchHover, hex, colors, width, triangle,
-  styles: passedStyles = {}, className = '' }) => {
+  styles: passedStyles = {}, className = '', children }) => {
   const styles = reactCSS(merge({
     'default': {
       card: {
@@ -147,6 +147,9 @@ export const Twitter = ({ onChange, onSwatchHover, hex, colors, width, triangle,
           onChange={ handleChange }
         />
         <div style={ styles.clear } />
+        <div className="twitter-picker-children">
+          {children}
+        </div>
       </div>
     </div>
   )
