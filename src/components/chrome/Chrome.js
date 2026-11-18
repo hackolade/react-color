@@ -8,7 +8,7 @@ import ChromeFields from './ChromeFields'
 import ChromePointer from './ChromePointer'
 import ChromePointerCircle from './ChromePointerCircle'
 
-export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, renderers,
+export const Chrome = ({ width = 225, onChange, disableAlpha = false, rgb, hsl, hsv, hex, renderers,
   styles: passedStyles = {}, className = '' }) => {
   const styles = reactCSS(merge({
     'default': {
@@ -147,12 +147,6 @@ Chrome.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disableAlpha: PropTypes.bool,
   styles: PropTypes.object,
-}
-
-Chrome.defaultProps = {
-  width: 225,
-  disableAlpha: false,
-  styles: {},
 }
 
 export default ColorWrap(Chrome)

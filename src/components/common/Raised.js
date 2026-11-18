@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import reactCSS from 'reactcss'
 import merge from 'lodash/merge'
 
-export const Raised = ({ zDepth, radius, background, children,
+export const Raised = ({ zDepth = 1, radius = 2, background = '#fff', children,
   styles: passedStyles = {} }) => {
   const styles = reactCSS(merge({
     'default': {
@@ -79,13 +79,6 @@ Raised.propTypes = {
   zDepth: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
   radius: PropTypes.number,
   styles: PropTypes.object,
-}
-
-Raised.defaultProps = {
-  background: '#fff',
-  zDepth: 1,
-  radius: 2,
-  styles: {},
 }
 
 export default Raised
